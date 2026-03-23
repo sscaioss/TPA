@@ -15,8 +15,22 @@ public class Personagem {
         this.classe = classe;
         this.raca = raca;
         this.sexo = sexo;
-    }   
+    }
+
+    @Override
+    public String toString(){
+        return "Personagem{nome='" + nome + "', classe='" + classe + "'}";
+    }
 
 
-    
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if(o == null || getClass() != o.getClass()) return false;
+        Personagem that = (Personagem) o;
+        return nome.equals(that.nome);
+    }
+
+
+
 }
