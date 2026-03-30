@@ -19,7 +19,7 @@ public class Personagem {
 
     @Override
     public String toString(){
-        return "Personagem{nome='" + nome + "', classe='" + classe + "'}";
+        return "Personagem{nome='" + nome + "', classe='" + classe + "', raça ='" + raca + "', sexo='" + sexo + "'}\n";
     }
 
 
@@ -30,7 +30,5 @@ public class Personagem {
         Personagem that = (Personagem) o;
         return nome.equals(that.nome);
     }
-
-
 
 }
