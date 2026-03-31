@@ -27,8 +27,4 @@ public class ListaEncadeadaArrayList<T> implements IColecao<T> {
         return listaInterna.size();
     }
 
-    @Override
-    public void limpar() {
-        listaInterna.clear();
-    }
 }

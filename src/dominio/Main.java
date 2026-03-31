@@ -104,7 +104,7 @@ public class Main {
 
                 case 7 -> {
 
-                    lista.limpar();
+                    lista = new ListaEncadeada<>();
 
                     System.out.println("\nQual arquivo deseja carregar?");
                     System.out.println("1. 100.000 personagens");

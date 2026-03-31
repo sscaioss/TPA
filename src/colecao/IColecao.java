@@ -33,6 +33,4 @@ public interface IColecao<T> {
     public int quantidadeNos();
 
 
-    public void limpar();
-
 }

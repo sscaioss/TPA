@@ -78,12 +78,6 @@ public class ListaEncadeada<T> implements IColecao<T>{
         return this.quant;
     }
 
-    @Override
-    public void limpar() {
-        prim = null;
-        ult = null;
-        quant = 0;
-    }
 
     public String toString() {
         No<T> aux = this.prim;
