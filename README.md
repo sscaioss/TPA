@@ -35,6 +35,8 @@ O teste foi desenhado para simular um cenário real de "Data Loading". Utilizamo
 
 ### Resultados Coletados (Tempo de Processamento)
 
+Exemplo de teste em um dos computadores
+
 | Implementação | 100.000 (100k) | 200.000 (200k) | 400.000 (400k) |
 | :--- | :--- | :--- | :--- |
 | **Lista Encadeada Manual** | 275 ms | 215 ms | 438 ms |
@@ -45,6 +47,58 @@ O teste foi desenhado para simular um cenário real de "Data Loading". Utilizamo
 * **Predomínio do ArrayList**: Em operações de escrita no final (append), o ArrayList vence por não precisar instanciar um novo objeto `No` a cada inserção, apenas preencher uma posição de memória já alocada.
 * **Custo de Instanciação**: A `Lista Encadeada Manual` e a `LinkedList` do Java sofrem com o *overhead* de criação de milhares de objetos `No`, o que explica o tempo superior.
 * **Eficiência de Cache**: O ArrayList aproveita melhor a arquitetura de hardware moderna, resultando em tempos menores mesmo com o crescimento da entrada.
+
+---
+
+## 🚀 Como Executar o Projeto
+
+Siga o passo a passo abaixo para configurar o ambiente e rodar os testes, seja no **IntelliJ IDEA** ou no **VS Code**.
+
+### 1. Clonar o Repositório
+Abra o seu terminal e escolha uma das opções de protocolo:
+
+* **Via HTTPS (Mais simples):**
+    ```bash
+    git clone [https://github.com/sscaioss/TPA.git](https://github.com/sscaioss/TPA.git)
+    ```
+* **Via SSH (Recomendado se tiver chaves configuradas):**
+    ```bash
+    git clone git@github.com:sscaioss/TPA.git
+    ```
+
+---
+
+### 2. Configuração na IDE
+
+#### No IntelliJ IDEA:
+1.  Vá em `File > Open` e selecione a pasta `TPA`.
+2.  Certifique-se de que o **JDK 17** (ou superior) está selecionado em `File > Project Structure`.
+3.  O IntelliJ deve reconhecer a pasta `src` automaticamente. Caso as classes fiquem com um ícone vermelho, clique com o botão direito na pasta `src` e selecione **Mark Directory as > Sources Root**.
+
+#### No VS Code:
+1.  Certifique-se de ter o **Extension Pack for Java** instalado.
+2.  Abra a pasta do projeto. O VS Code detectará os arquivos `.java` e habilitará os botões de "Run" acima dos métodos `main`.
+
+---
+
+### 3. Ordem de Execução dos Testes
+
+Para que o projeto funcione corretamente, siga esta sequência:
+
+#### **Passo 1: Gerar a Massa de Dados**
+Os arquivos de texto com milhares de registros não são processados sem antes serem criados localmente.
+* Abra e execute a classe: `src/util/GeradorArquivosPersonagem.java`.
+* Isso criará os arquivos `personagens100k.txt`, `personagens200k.txt` e `personagens400k.txt` na raiz do seu projeto.
+
+#### **Passo 2: Rodar o Benchmark (Análise de Tempo)**
+Para comparar a performance entre a nossa Lista Encadeada e as listas do Java:
+* Abra e execute a classe: `src/dominio/TesteDesempenho.java`.
+* O console exibirá uma tabela com os tempos de execução em milissegundos (**ms**).
+
+#### **Passo 3: Rodar o Sistema Principal (Terminal)**
+Para interagir manualmente com a estrutura (adicionar, remover e pesquisar personagens):
+* Abra e execute a classe: `src/dominio/Main.java`.
+* Utilize o menu numérico no console para realizar as operações.
 
 ---
 
